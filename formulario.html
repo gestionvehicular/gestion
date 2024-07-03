@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Contacto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            width: 90%;
+            max-width: 500px;
+        }
+        .form-container h2 {
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #218838;
+        }
+        .whatsapp-link {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            text-decoration: none;
+            color: #25D366;
+            font-weight: bold;
+        }
+        .person-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            width: 90%;
+            max-width: 500px;
+        }
+        .person {
+            display: flex;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        .person img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+        }
+        .person-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .person-info h3 {
+            margin: 0;
+            margin-bottom: 10px;
+        }
+        .person-info p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>FORMULARIO</h2>
+        <form action="procesar_formulario.php" method="post">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="telefono">Número de Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required>
+            </div>
+            <div class="form-group">
+                <label for="tramite">Trámite a realizar:</label>
+                <input type="text" id="tramite" name="tramite" required>
+            </div>
+            <div class="form-group">
+                <label for="estado">Estado:</label>
+                <input type="text" id="estado" name="estado" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Enviar</button>
+            </div>
+        </form>
+        <a class="whatsapp-link" href="https://wa.me/1234567890" target="_blank">Contactar por WhatsApp</a>
+    </div>
+    <div class="person-container">
+        <div class="person">
+            <img src="aldomtz.jpeg" alt="Foto de Aldo Martinez">
+            <div class="person-info">
+                <h3>Aldo Martinez</h3>
+                <p>Gestor vehicular</p>
+            </div>
+        </div>
+        <div class="person">
+            <img src="persona2.jpg" alt="Foto de Persona 2">
+            <div class="person-info">
+                <h3>Persona 2</h3>
+                <p>Información sobre Persona 2. Esta persona ha hecho...</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
