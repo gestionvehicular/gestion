@@ -94,11 +94,25 @@
             margin: 0;
         }
     </style>
+    <script>
+        function enviarWhatsApp(event) {
+            event.preventDefault();
+            var nombre = document.getElementById('nombre').value;
+            var telefono = document.getElementById('telefono').value;
+            var tramite = document.getElementById('tramite').value;
+            var estado = document.getElementById('estado').value;
+            
+            var mensaje = `Hola, mi nombre es ${nombre}. Quisiera realizar el siguiente trámite: ${tramite}. Estado: ${estado}. Teléfono: ${telefono}`;
+            var whatsappLink = `https://wa.me/4491435333?text=${encodeURIComponent(mensaje)}`;
+            
+            window.open(whatsappLink, '_blank');
+        }
+    </script>
 </head>
 <body>
     <div class="form-container">
         <h2>FORMULARIO</h2>
-        <form action="procesar_formulario.php" method="post">
+        <form onsubmit="enviarWhatsApp(event)">
             <div class="form-group">
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" required>
@@ -119,7 +133,6 @@
                 <button type="submit">Enviar</button>
             </div>
         </form>
-        <a class="whatsapp-link" href="https://wa.me/1234567890" target="_blank">Contactar por WhatsApp</a>
     </div>
     <div class="person-container">
         <div class="person">
