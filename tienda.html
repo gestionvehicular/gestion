@@ -46,55 +46,59 @@
             border-radius: 5px;
         }
     </style>
+    <script>
+        function redirigirFormulario(tramite) {
+            window.location.href = `formulario.html?tramite=${encodeURIComponent(tramite)}`;
+        }
+    </script>
 </head>
 <body>
     <div class="container">
         <h1>GESTION</h1>
         <div class="productos">
             <div class="producto">
-                <img src="roducto1.jpeg" alt="Producto 1">
-                <p>1:CANJE DE PLACAS ZACATECAS.</p>
-                <a href="formulario.html">MAS INFORMES</a>
+                <img src="producto1.jpeg" alt="Producto 1">
+                <p>1: CANJE DE PLACAS ZACATECAS.</p>
+                <a href="#" onclick="redirigirFormulario('CANJE DE PLACAS ZACATECAS')">MAS INFORMES</a>
             </div>
             <div class="producto">
-                <img src="roducto2.jpeg" alt="Producto 2">
-                <p>2:TARJETA DE CIRCULACION.</p>
-                <a href="formulario.html">MAS INFORMES</a>
+                <img src="producto2.jpeg" alt="Producto 2">
+                <p>2: TARJETA DE CIRCULACION.</p>
+                <a href="#" onclick="redirigirFormulario('TARJETA DE CIRCULACION')">MAS INFORMES</a>
             </div>
             <div class="producto">
                 <img src="" alt="Producto 3">
                 <p>Producto 3.</p>
-                <a href="formulario.html">MAS INFORMES</a>
+                <a href="#" onclick="redirigirFormulario('Producto 3')">MAS INFORMES</a>
             </div>
             <div class="producto">
                 <img src="" alt="Producto 4">
                 <p>Producto 4.</p>
-                <a href="formulario.html">MAS INFORMES</a>
-            </div>
-	    </div>
-<div class="productos">
-<div class="producto">
-                <img src="" alt="Producto 1">
-                <p>Producto 5:.</p>
-                <a href="formulario.html">MAS INFORMES</a>
-            </div>
-            <div class="producto">
-                <img src="" alt="Producto 2">
-                <p>Producto 6.</p>
-                <a href="formulario.html">MAS INFORMES</a>
-            </div>
-            <div class="producto">
-                <img src="" alt="Producto 3">
-                <p>Producto 7:.</p>
-                <a href="formulario.html">MAS INFORMES</a>
-            </div>
-            <div class="producto">
-                <img src="" alt="Producto 4">
-                <p>Producto 8:.</p>
-                <a href="formulario.html">MAS INFORMES</a>
+                <a href="#" onclick="redirigirFormulario('Producto 4')">MAS INFORMES</a>
             </div>
         </div>
-      
+        <div class="productos">
+            <div class="producto">
+                <img src="" alt="Producto 5">
+                <p>Producto 5.</p>
+                <a href="#" onclick="redirigirFormulario('Producto 5')">MAS INFORMES</a>
+            </div>
+            <div class="producto">
+                <img src="" alt="Producto 6">
+                <p>Producto 6.</p>
+                <a href="#" onclick="redirigirFormulario('Producto 6')">MAS INFORMES</a>
+            </div>
+            <div class="producto">
+                <img src="" alt="Producto 7">
+                <p>Producto 7.</p>
+                <a href="#" onclick="redirigirFormulario('Producto 7')">MAS INFORMES</a>
+            </div>
+            <div class="producto">
+                <img src="" alt="Producto 8">
+                <p>Producto 8.</p>
+                <a href="#" onclick="redirigirFormulario('Producto 8')">MAS INFORMES</a>
+            </div>
+        </div>
     </div>
 </body>
 </html>
