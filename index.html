@@ -15,6 +15,34 @@
             color: white;
             padding: 1rem;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+            height: 3rem;
+        }
+        .marquee {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 30s linear infinite;
+            position: relative;
+        }
+        @keyframes marquee {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+        .marquee-bg {
+            display: inline-block;
+            vertical-align: middle;
+            width: 1920px; /* Ancho recomendado */
+            height: 100px; /* Alto recomendado */
+        }
+        .marquee-text {
+            display: inline-block;
+            vertical-align: middle;
+            color: white;
         }
         nav {
             background-color: #333;
@@ -99,11 +127,19 @@
             border-radius: 5px;
         }
     </style>
+    <script>
+        function redirigirFormulario(tramite) {
+            window.location.href = `formulario.html?tramite=${encodeURIComponent(tramite)}`;
+        } 
+    </script>
+    <link rel="icon" href="sedan.png">
 </head>
 <body>
 
 <header>
-    <h1>Gestoria Vehicular</h1>
+    <div class="marquee">
+        <span class="marquee-text">Gestoria Vehicular - Servicios de legalización, canje de placas, permisos para circular, licencias, y reposición de documentos vehiculares.</span>
+    </div>
 </header>
 
 <nav>
@@ -124,7 +160,7 @@
             <img src="producto3.jpg" alt="Legalización">
         </div>
         <div class="regresar">
-            <a href="formulario.html">Solicitar trámite</a>
+            <a href="javascript:void(0)" onclick="redirigirFormulario('Legalización por Decreto')">Solicitar trámite</a>
         </div>
     </section>
 
@@ -135,7 +171,7 @@
             <img src="placasags.jpg" alt="Canje de Placas">
         </div>
         <div class="regresar">
-            <a href="formulario.html">Solicitar trámite</a>
+            <a href="javascript:void(0)" onclick="redirigirFormulario('Canje de Placas')">Solicitar trámite</a>
         </div>
     </section>
 
@@ -146,7 +182,7 @@
             <img src="producto4.jpg" alt="Permiso para Circular">
         </div>
         <div class="regresar">
-            <a href="formulario.html">Solicitar trámite</a>
+            <a href="javascript:void(0)" onclick="redirigirFormulario('Permiso para Circular')">Solicitar trámite</a>
         </div>
     </section>
 
@@ -192,7 +228,7 @@
             </tr>
         </table>
         <div class="regresar">
-            <a href="formulario.html">Solicitar trámite</a>
+            <a href="file:///C:/Users/Miguel%20macias/Desktop/aldo%20mtz/licencias.html">Solicitar trámite</a>
         </div>
     </section>
 
@@ -203,7 +239,7 @@
             <img src="documentos.jpg" alt="Reposición de Documentos">
         </div>
         <div class="regresar">
-            <a href="formulario.html">Solicitar trámite</a>
+            <a href="javascript:void(0)" onclick="redirigirFormulario('Reposición de Documentos')">Solicitar trámite</a>
         </div>
     </section>
 </div>

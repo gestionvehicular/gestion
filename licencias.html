@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<link rel="icon" href="sedan.png">
+<head>
+<link rel="icon" href="sedan.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Contacto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            width: 90%;
+            max-width: 500px;
+        }
+        .form-container h2 {
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #218838;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+    <script>
+        function enviarWhatsApp(event) {
+            event.preventDefault();
+            var nombre = document.getElementById('nombre').value;
+            var telefono = document.getElementById('telefono').value;
+            var tipoLicencia = document.getElementById('tipoLicencia').value;
+            var años = document.getElementById('años').value;
+            var estado = document.getElementById('estado').value;
+            
+            var mensaje = `Hola, mi nombre es ${nombre}. Quisiera solicitar una licencia tipo ${tipoLicencia} por ${años} años. Estado: ${estado}. Teléfono: ${telefono}`;
+            var whatsappLink = `https://wa.me/4491435333?text=${encodeURIComponent(mensaje)}`;
+            
+            window.open(whatsappLink, '_blank');
+        }
+
+        function actualizarOpcionesAños() {
+            var tipoLicencia = document.getElementById('tipoLicencia').value;
+            var años = document.getElementById('años');
+            años.innerHTML = '';
+
+            if (tipoLicencia === 'Permiso a Menor') {
+                años.options.add(new Option('1 Año', '1'));
+                años.options.add(new Option('2 Años', '2'));
+            } else {
+                años.options.add(new Option('2 Años', '2'));
+                años.options.add(new Option('4 Años', '4'));
+                años.options.add(new Option('6 Años', '6'));
+            }
+        }
+
+        window.onload = function() {
+            actualizarOpcionesAños();
+            document.getElementById('tipoLicencia').addEventListener('change', actualizarOpcionesAños);
+        }
+    </script>
+</head>
+<body>
+    <div class="form-container">
+        <h2>FORMULARIO</h2>
+        <form onsubmit="enviarWhatsApp(event)">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="telefono">Número de Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required>
+            </div>
+            <div class="form-group">
+                <label for="tipoLicencia">Tipo de Licencia:</label>
+                <select id="tipoLicencia" name="tipoLicencia" required>
+                    <option value="Automovilista">Automovilista</option>
+                    <option value="Motociclista">Motociclista</option>
+                    <option value="Operador A">Operador A</option>
+                    <option value="Operador B">Operador B</option>
+                    <option value="Operador C">Operador C</option>
+                    <option value="Operador D">Operador D</option>
+                    <option value="Operador E">Operador E</option>
+                    <option value="Permiso a Menor">Permiso a Menor</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="años">Años:</label>
+                <select id="años" name="años" required>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="estado">Estado:</label>
+                <input type="text" id="estado" name="estado" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Enviar</button>
+            </div>
+        </form>
+        <table>
+            <tr>
+                <th>TIPO DE LICENCIA</th>
+                <th>2 AÑOS</th>
+                <th>4 AÑOS</th>
+                <th>6 AÑOS</th>
+            </tr>
+            <tr>
+                <td>AUTOMOVILISTA</td>
+                <td>$440</td>
+                <td>$712</td>
+                <td>$1,004</td>
+            </tr>
+            <tr>
+                <td>MOTOCICLISTA</td>
+                <td>$440</td>
+                <td>$712</td>
+                <td>$1,004</td>
+            </tr>
+            <tr>
+                <td>OPERADOR TIPO: A, B, C, D Y E</td>
+                <td>$550</td>
+                <td>$890</td>
+                <td>$1,255</td>
+            </tr>
+            <tr>
+                <th>TIPO DE LICENCIA</th>
+                <th>1 AÑO</th>
+                <th>2 AÑOS</th>
+                <th colspan="1"></th>
+            </tr>
+            <tr>
+                <td>PERMISO A MENOR</td>
+                <td>$560</td>
+                <td>$785</td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
